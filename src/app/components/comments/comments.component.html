@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+
+
+
+ 
+<nav class="navbar bg-light">
+  <div class="container p-3 my-3 bg-dark text-white">
+    <p><h3>Comentarios del Post</h3>
+     
+  </div>
+</nav>
+
+
+<div class="container list-group">
+<a [routerLink]="['/posts-user']" href="#" class="list-group-item list-group-item-action text-center" style="background-color: darkgray;">Volver al Menú Principal</a>
+</div>
+
+
+<div class="card m-3" *ngFor="let comentario of comentarios" >
+  <div class="card-body">
+    <h5 class="card-header">name: {{comentario.name}} | email: {{comentario.email}}</h5>
+    <p class="card-text">{{comentario.body}}</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+

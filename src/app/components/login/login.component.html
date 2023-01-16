@@ -1,0 +1,41 @@
+
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h2>Bienvenido</h2>
+    </div>
+
+    <!-- Login Form -->
+    <form  [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+      <div *ngIf="validMessage != '' ">
+        <h3 class="text-danger">{{validMessage}}</h3>
+      </div>
+      <input type="text" id="login" class="fadeIn second"  placeholder="email@example.com" formControlName="email">
+      <div *ngIf="controles['email'].errors?.['email']">
+        <p class="text-danger">
+          Correo Electronico invalido
+        </p>
+      </div>
+      <input type="password" id="password" class="fadeIn third"  placeholder="0000-0000" formControlName="password">
+      <div *ngIf="controles['password'].errors?.['pattern']">
+        <p class="text-danger">
+            Password Invalido
+        </p>
+      </div>
+      <div style="margin-top: 10px; margin-bottom: 10px;">
+        <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Log In</button>
+      </div> 
+     
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>

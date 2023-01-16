@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<nav class="navbar bg-light">
+  <div class="container p-3 my-3 bg-dark text-white">
+    <p><h3>Post de {{user}}</h3>
+    
+  </div>
+</nav>
+
+<div class="container">
+  <table class="table table-bordered table-inverse">
+    <tr>
+      <th class="col">Id</th>
+      <th class="col">body</th>
+      <th class="col">title</th>
+      <th class="col">Comments</th>
+    </tr>
+    <tr *ngFor="let postsAux of posts">
+      
+      <th>{{postsAux.id}}</th>
+      <th>{{postsAux.body}}</th>
+      <th>{{postsAux.title}}</th>
+      <th>
+        <button class="btn" style="background-color: darkgray;">
+          <a [routerLink]="['/comments', postsAux.id]" href="#" class="list-group-item list-group-item-action">Ir a los Comentarios</a>
+        </button>
+        
+      </th>
+    </tr>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
